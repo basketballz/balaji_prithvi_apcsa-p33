@@ -8,6 +8,7 @@ public class Trap
 {
 	public static double area( int base1, int base2, int height )
 	{
-		return 0;
+		double cow = (base1+  base2)*(.5)*(height);
+		return cow;
 	}
 }
