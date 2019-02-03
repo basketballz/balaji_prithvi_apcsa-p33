@@ -23,6 +23,7 @@ public class MilesPerHour
 
 	public MilesPerHour(int dist, int hrs, int mins)
 	{
+		
 	}
 
 	public void setNums(int dist, int hrs, int mins)
