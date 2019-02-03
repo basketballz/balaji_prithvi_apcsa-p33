@@ -7,6 +7,7 @@ public class Fahrenheit
 {
 	public static double convert( double f )
 	{
-		return 0;
+		double cow1 = (f-32)*5/9;
+		return cow1;
 	}
 }
