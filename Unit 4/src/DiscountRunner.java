@@ -17,6 +17,7 @@ public class DiscountRunner
 		
 		out.print("Enter the original bill amount :: ");
 		double amt = keyboard.nextDouble();
+		System.out.printf("%.3f\n",amt);
 		
 
 	}

@@ -7,8 +7,19 @@ import java.util.Scanner;
 
 public class AddSubMult
 {
-	public static double check( double a, double b )
+	public static double bbigger( double a, double b )
 	{
-		return 0;
+		double c = b - a;
+		return c;
+	}
+	public static double abigger( double a, double b )
+	{
+		double c = a - b;
+		return c;
+	}
+	public static double equal( double a, double b )
+	{
+		double c = b * a;
+		return c;
 	}
 }
