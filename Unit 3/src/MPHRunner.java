@@ -14,7 +14,8 @@ public class MPHRunner
 {
 	public static void main( String[] args )
 	{
-		Scanner keyboard = new Scanner(in);
+		Scanner keyboard = new Scanner(System.in);
+		
 		int dist;
 		int hrs;
 		int mins;
