@@ -14,6 +14,7 @@ public class TrapRunner
 		System.out.println( Trap.area( 13, 9, 3) );
 		System.out.println( Trap.area( 6, 11, 4) );
 		System.out.println( Trap.area( 11, 8, 5) );
+		
 	}
 }
 

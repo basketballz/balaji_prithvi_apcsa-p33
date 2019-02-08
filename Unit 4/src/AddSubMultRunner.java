@@ -16,7 +16,8 @@ public class AddSubMultRunner
 		System.out.println( AddSubMult.bbigger( 0, 1) );	
 		System.out.println( AddSubMult.abigger( 1, 0 ) );	
 		System.out.println( AddSubMult.bbigger( 3.1, 5.7) );	
-		System.out.println( AddSubMult.abigger( 5.2 , 3.7 ) );	
-		System.out.println( AddSubMult.abigger( 5342, 323 ) );						
+		System.out.println( AddSubMult.abigger( 5.2 , 3.8 ) );	
+		System.out.println( AddSubMult.abigger( 5342, 323 ) );	
+		
 	}
 }
