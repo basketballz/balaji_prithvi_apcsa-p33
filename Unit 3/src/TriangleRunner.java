@@ -27,12 +27,76 @@ public class TriangleRunner  //this class is used to test Triangle
 
 
 		Triangle test = new Triangle(a, b, c);
+		test.setSides(a,b,c);
 		test.calcPerimeter();
 		test.calcArea();
 		test.print();
 
 
 		//ask for user input
+		System.out.print("Enter side A ::  ");
+		a = keyboard.nextInt();
+
+		System.out.print("Enter side B ::  ");
+		b = keyboard.nextInt();
+
+		System.out.print("Enter side C ::  ");
+		c = keyboard.nextInt();
+
+
+		test.setSides(a,b,c);
+		test.calcPerimeter();
+		test.calcArea();
+		test.print();
+		
+		System.out.print("Enter side A ::  ");
+		a = keyboard.nextInt();
+
+		System.out.print("Enter side B ::  ");
+		b = keyboard.nextInt();
+
+		System.out.print("Enter side C ::  ");
+		c = keyboard.nextInt();
+
+
+		test.setSides(a,b,c);
+		test.calcPerimeter();
+		test.calcArea();
+		test.print();
+		
+		System.out.print("Enter side A ::  ");
+		a = keyboard.nextInt();
+
+		System.out.print("Enter side B ::  ");
+		b = keyboard.nextInt();
+
+		System.out.print("Enter side C ::  ");
+		c = keyboard.nextInt();
+
+
+		test.setSides(a,b,c);
+		test.calcPerimeter();
+		test.calcArea();
+		test.print();
+		
+		
+		System.out.print("Enter side A ::  ");
+		a = keyboard.nextInt();
+
+		System.out.print("Enter side B ::  ");
+		b = keyboard.nextInt();
+
+		System.out.print("Enter side C ::  ");
+		c = keyboard.nextInt();
+
+
+		test.setSides(a,b,c);
+		test.calcPerimeter();
+		test.calcArea();
+		test.print();
+		
+		
+		
 		System.out.print("Enter side A ::  ");
 		a = keyboard.nextInt();
 

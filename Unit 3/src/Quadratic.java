@@ -18,28 +18,44 @@ public class Quadratic
 
 	public Quadratic()
 	{
+		setEquation(a,b,c);
+		rootOne = 0.0;
+		rootTwo = 0.0;
 	}
 
 	public Quadratic(int quadA, int quadB, int quadC)
 	{
+		setEquation(quadA, quadB, quadC);
+		rootOne = 0.0;
+		rootTwo = 0.0;
+		
 	}
 
 	public void setEquation(int quadA, int quadB, int quadC)
 	{
- 	}
+		a = quadA;
+		b = quadB;
+		c = quadC;
+		
+	}
 
 	public void calcRoots( )
 	{
-	}
-
+		rootOne =  (-b + Math.sqrt(b * b - 4 * a * c)) / (2 * a);
+		rootTwo =  (-b - Math.sqrt(b * b - 4 * a * c)) / (2 * a);
+ 	}
+	
     public void print()
     {
+    	System.out.printf("%.2f\n",rootOne);
+    	System.out.printf("%.2f\n",rootTwo);
+    	
     }
     
     //complete either print or the toString()
 
-	public String toString()
+	//public String toString()
 	{
-		return "";
+	//	return "";
 	}
 }
