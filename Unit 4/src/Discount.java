@@ -11,17 +11,13 @@ import java.util.Scanner;
 
 public class Discount
 {
-	//instance variables and constructors could be used, but are not really needed
-	
-	
-
-	//getDiscountedBill() will return final amount of the bill
-	//			if the bill is >2000, the bill receives a 15% discount
-	public static double getDiscountedBill(double bill, float discount) 
-		{
-		if (bill > 2000.0D) 
-			{return (bill - (bill * (discount / 100.0F)));}
-		 else 
-			{return bill;}
-		 }
+	public static  double isDiscount( int bill )
+	{
+		return bill*0.85;
+	}
+	public static double notDiscount( int bill )
+	{
+		return bill;
+	}	
 }
+
