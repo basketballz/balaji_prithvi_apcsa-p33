@@ -9,7 +9,7 @@ public class AddSubMult
 {
 	public static double bbigger( double a, double b )
 	{
-		double c = b - a;
+		double c = b - a;{}
 		return c;
 	}
 	public static double abigger( double a, double b )
