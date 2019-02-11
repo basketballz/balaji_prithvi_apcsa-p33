@@ -31,14 +31,18 @@ public class StringOddOrEven
 
  	public boolean isEven()
  	{
-		int x = word.length();
+		/*int x = word.length();
 		int r = x % 2;
 		if (r!=0)
 		{
 			return false;
 		}
 		else 
-			return true;
+			return true;*/
+ 		if (word.length() % 2 == 0) 
+ 			return true; 
+ 		else 
+ 			return false;
 	}
 
  	public String toString(String res)

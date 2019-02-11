@@ -24,7 +24,8 @@ public class StringRunner
 		if (cow.isEven() == true)
 				out.println(cow.toString("even"));
 			else
-				out.println(cow.toString("odd"));}
+				out.println(cow.toString("odd"));
+		}
 
 	}
 }
