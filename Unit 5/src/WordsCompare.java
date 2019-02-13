@@ -50,4 +50,5 @@ public class WordsCompare
 		
 			return wordOne + " should be placed after " + wordTwo + "\n";
 		
-	}}
+	}
+	}
