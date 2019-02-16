@@ -31,6 +31,6 @@ public class StarsRunner
 	   ref.printTwoBlankLines();
 	   ref.printASmallBox();
 	   ref.printABigBox();
-      
+	
    }
 }
