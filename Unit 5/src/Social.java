@@ -8,9 +8,12 @@ public class Social
 {
    public static String go( String a )
 	{
-		return "code";
+	   if (a.charAt(3) == '-' && a.charAt(6) == '-') return "good";
+	   return "bad";
+	   
 	}
 }
+
 
 
 

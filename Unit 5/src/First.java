@@ -3,12 +3,13 @@
 //Name -
 //Date -
 
-
 public class First
 {
-   public static String go( String a )
+   public  String go( String a )
 	{
-		return "";
+	   for (int i = 1; i<a.length(); i++)
+		   if (a.charAt(i) == a.charAt(0)) return "yes";
+	   return "no";
 	}
 }
 

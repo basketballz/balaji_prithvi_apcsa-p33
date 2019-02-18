@@ -14,23 +14,27 @@ public class StringFirstLetterCheck
 
 	public StringFirstLetterCheck()
 	{
+		setWords("a","b");
 	}
 
 	public StringFirstLetterCheck(String one, String two)
 	{
+		setWords(one, two);
 	}
 
 	public void setWords(String one, String two)
 	{
+		wordOne = one;
+		wordTwo = two;
 	}
 
 	public boolean checkFirstLetter( )
 	{
-		return false;
+		return (wordOne.charAt(0) == wordTwo.charAt(0));
 	}
 
 	public String toString()
 	{
-	   return wordOne + " does not have the same first letter as " + wordTwo + "\n";
+	   return (checkFirstLetter() ? wordOne + " has the same first letter as " + wordTwo + "\n" : wordOne + " does not have the same first letter as " + wordTwo + "\n");
 	}
 }
