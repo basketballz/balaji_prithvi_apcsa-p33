@@ -1,22 +1,53 @@
-//(c) A+ Computer Science
-//www.apluscompsci.com
-//Name -
-
 import static java.lang.System.*;
 
 public class Perfect
 {
-   private int number;
+   private int numberperfect;
 
-	//add constructors
+	public Perfect()
+	{
+		setNumbers(0);
+	}
+	public Perfect(int a)
+	{
+		setNumbers(a);
+	}
 
-	//add a set method
+	public void setNumbers(int a)
+	{
+		numberperfect = a;
+	}
 
 	public boolean isPerfect()
 	{
-		return false;
+		int total = 0;
+		
+		for (int i = 1; i < numberperfect; i++)
+		{
+			if (numberperfect % i == 0)
+			{
+				total = total + i;
+			}
+			
+		}
+		
+		if (total == numberperfect)
+		{
+			return true;
+		}
+		
+		return false; 
 	}
 
-	//add a toString	
+	public String toString()
+	{
+		if (isPerfect() == true) {
+			String output = numberperfect + " is perfect";
+			return output;
+		}
+		String output = numberperfect + " is not perfect";
+		return output;
+		
+	}
 	
 }

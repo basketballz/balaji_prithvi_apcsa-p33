@@ -6,6 +6,9 @@
 public class SumLastRunner
 {
 	public static void main( String args[] )
-	{											
+	{			
+		RaySumLast s = new
+				
+				System.out.println(s.go)
 	}
 }
