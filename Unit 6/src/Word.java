@@ -1,3 +1,7 @@
+//(c) A+ Computer Science
+//www.apluscompsci.com
+//Name
+
 import static java.lang.System.*;
 
 public class Word
@@ -6,7 +10,7 @@ public class Word
 
 	public Word()
 	{
-		setString("");
+		word = "";
 	}
 
 	public Word(String s)
@@ -20,28 +24,26 @@ public class Word
 	}
 
 	public char getFirstChar()
-	{
+	{	
 		return word.charAt(0);
 	}
 
 	public char getLastChar()
 	{
-		return word.charAt(word.length() - 1);
+		return word.charAt(word.length()-1);
 	}
 
 	public String getBackWards()
 	{
 		String back = "";
-		for (int i = word.length(); i >= 1; i--) 
-		{
-			back = back + word.substring(i-1, i);
+		for(int i = word.length()-1; i > -1; i--) {
+			back = back + word.charAt(i);
 		}
 		return back;
 	}
 
  	public String toString()
  	{
- 		String output = getFirstChar() + "\n" + getLastChar() + "\n" + getBackWards() + "\n" + word;
- 		return output;
+ 		return getFirstChar() + "\n" + getLastChar() + "\n" + getBackWards() + "\n" + word + "\n";
 	}
 }

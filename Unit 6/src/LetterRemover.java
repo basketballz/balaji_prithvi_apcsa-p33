@@ -1,6 +1,4 @@
-//(c) A+ Computer Science
-//www.apluscompsci.com
-//Name -
+
 
 import static java.lang.System.*;
 
@@ -11,14 +9,15 @@ public class LetterRemover
 
 	public LetterRemover()
 	{
-		setRemover("",' ');
-	}
-	
-	public LetterRemover(String s, char rem)
-	{
-		setRemover(s, rem);
+		setRemover("", ' ');
+		
 	}
 
+	public LetterRemover(String s, char rem) {
+		setRemover(s, rem );
+	}
+	
+	
 	public void setRemover(String s, char rem)
 	{
 		sentence = s;
@@ -27,26 +26,18 @@ public class LetterRemover
 
 	public String removeLetters()
 	{
-		String newSentence = "";
-		int x = sentence.length();
+		String cleaned = sentence;
+		int loc = cleaned.indexOf(lookFor);
 		
-		for (int i = 0; i < x; i++) 
-		{
-			if (sentence.charAt(i) == lookFor)
-			{
-				
-			}
-			else 
-			{
-				newSentence = newSentence + sentence.charAt(i);
-			}
+		while(loc > -1) {
+			cleaned = cleaned.substring(0, loc) + cleaned.substring(loc + 1);
+			loc = cleaned.indexOf(lookFor);
 		}
-		String cleaned = newSentence;
 		return cleaned;
 	}
 
 	public String toString()
 	{
-		return sentence + " - letter to remove " + lookFor + "\n" + removeLetters();
+		return sentence + " - letter to remove " + lookFor;
 	}
 }

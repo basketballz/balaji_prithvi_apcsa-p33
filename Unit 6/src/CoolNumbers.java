@@ -8,7 +8,7 @@ public class CoolNumbers
 {
 	/*
 	 *method isCoolNumber will return true if
-	 *	num % 3-6 all have a remainder of 1
+	 *	num % 3-6 all have a remainder of 1//
 	 *it will return false otherwize
 	 */
 	public static boolean isCoolNumber( int num )

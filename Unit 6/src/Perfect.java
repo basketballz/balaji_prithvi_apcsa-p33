@@ -41,12 +41,12 @@ public class Perfect
 
 	public String toString()
 	{
-		if (isPerfect() == true) {
-			String output = numberperfect + " is perfect";
-			return output;
-		}
-		String output = numberperfect + " is not perfect";
-		return output;
+		if (isPerfect()) 
+			return numberperfect + " is perfect";
+			
+		else
+		return numberperfect + " is not perfect";
+		
 		
 	}
 	

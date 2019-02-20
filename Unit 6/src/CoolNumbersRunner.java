@@ -16,6 +16,6 @@ public class CoolNumbersRunner
 		System.out.println( CoolNumbers.countCoolNumbers(23500) + " cool numbers between 6 - " + 23500);
 		System.out.println( CoolNumbers.countCoolNumbers(32500) + " cool numbers between 6 - " + 32500);
 		
-		//add more test cases
+		//add more test cases//
 	}
 }

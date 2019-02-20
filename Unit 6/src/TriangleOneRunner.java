@@ -10,19 +10,28 @@ public class TriangleOneRunner
 {
 	public static void main ( String[] args )
 	{
-		Scanner keyboard = new Scanner(System.in);
-		int x = 0;
-		while (x < 5)
-		{
-			System.out.print("Enter a word :: ");
-			String str = keyboard.nextLine();
-			
-			TriangleOne s = new TriangleOne(str);
-			
-			s.print();
-			System.out.println();
-			x++;
-		}
+		TriangleOne not = new TriangleOne();
+		
+		not.setWord("hippo");
+		not.print();
+		
+		
+		not.setWord("abcd");
+		not.print();
+		
+		not.setWord("it");
+		not.print();
+		
+		
+		
+		not.setWord("a");
+		not.print();
+		not.setWord("chicken");
+		not.print();
+		
+		
+		
+		
 
 	}
 }

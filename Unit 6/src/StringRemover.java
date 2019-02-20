@@ -52,6 +52,6 @@ class StringRemover
 
 	public String toString()
 	{
-		return sentence + " - String to remove" +remove;
+		return sentence + " - String to remove " +remove;
 	}
 }

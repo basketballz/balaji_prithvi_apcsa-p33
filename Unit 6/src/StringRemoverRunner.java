@@ -12,11 +12,11 @@ public class StringRemoverRunner
 		out.println(removernumber);
 		out.println(removernumber.removeStrings() + "\n");
 		
-		removernumber.setRemover("sxsssxssxsxssexssxsesss", "xs");
+		removernumber.setRemover("sxsssxssxsxssexssxsesss", " xs");
 		out.println(removernumber);
 		out.println(removernumber.removeStrings() + "\n");
 		
-		removernumber.setRemover("fuxqwexqwertyxqwexqwertyrtyxqwertyrtyn", "qwerty");
+		removernumber.setRemover("fuxqwexqwertyxqwexqwertyrtyxqwertyrtyn", " qwerty");
 		out.println(removernumber);
 		out.println(removernumber.removeStrings() + "\n");
 		

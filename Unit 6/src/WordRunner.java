@@ -11,19 +11,22 @@ public class WordRunner
 {
 	public static void main ( String[] args )
 	{
-		Scanner keyboard = new Scanner(System.in);
-		int x = 0;
+		Word wr = new Word();
 		
-		while (x < 5)
-		{
-			System.out.print("Enter a word :: ");
-			String str = keyboard.nextLine();
-			
-			Word s = new Word(str);
-			
-			System.out.println(s.toString() + "\n");
-			x++;
-		}
+		wr.setString("Hello");
+		System.out.println(wr+"\n");
+		
+		wr.setString("World");
+		System.out.println(wr+"\n");
+		
+		wr.setString("JukeBox");
+		System.out.println(wr+"\n");
+		
+		wr.setString("TCEA");
+		System.out.println(wr+"\n");
+		
+		wr.setString("UIL");
+		System.out.println(wr+"\n");
 
 	}
 }

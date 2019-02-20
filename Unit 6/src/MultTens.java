@@ -13,6 +13,7 @@ public class MultTens
 			return "aplus";
 		int power = 10*x;
 		for (int count=0 ; count<=power;count=count+10)
+			if (count !=0)
 			System.out.print(count);
 		return cow;
 		

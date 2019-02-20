@@ -8,7 +8,22 @@ public class TenToAnyRunner
 {
 	public static void main( String args[] )
 	{
-		//add test cases	
+		TenToAny test = new TenToAny(234,9);
+		out.println(test);
+		
+		
+		
+		//add test cases
+		
+		
+			
+			
+				
+				
+				
+				
+			
+		
 		
 	}
 }

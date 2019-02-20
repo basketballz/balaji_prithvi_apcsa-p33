@@ -10,18 +10,29 @@ public class PerfectRunner
 {
 	public static void main( String args[] )
 	{
-		Scanner keyboard = new Scanner(System.in);
-		int x = 0;
-
-		while (x < 1000)
-			{
-				System.out.print("Enter a number please!!!!!!! :: ");
-				int num = keyboard.nextInt();
-				Perfect s = new Perfect(num);
-				s.isPerfect();
-				System.out.println(s.toString() + "\n");
-				x++;
-			}
+		Perfect cow = new Perfect();
+		
+		cow.setNumbers(496);
+		out.println(cow);
+		cow.setNumbers(45);
+		out.println(cow);
+		cow.setNumbers(6);
+		out.println(cow);
+		cow.setNumbers(14);
+		out.println(cow);
+		cow.setNumbers(8128);
+		out.println(cow);
+		cow.setNumbers(1245);
+		out.println(cow);
+		cow.setNumbers(33);
+		out.println(cow);
+		cow.setNumbers(28);
+		out.println(cow);
+		cow.setNumbers(27);
+		out.println(cow);
+		cow.setNumbers(33550336);
+		out.println(cow);
+		
 				
 	}
 }
