@@ -13,6 +13,10 @@ public class CoolNumbers
 	 */
 	public static boolean isCoolNumber( int num )
 	{
+		
+		if (num % 3 == 1&&num % 4 == 1&&num % 5 == 1&&num % 6 == 1)
+			return true;
+		else
 		 return false;
 	}
 	
@@ -20,8 +24,18 @@ public class CoolNumbers
 	 *method countCoolNumbers will return the count
 	 *of the coolNumbers between 6 and stop
 	 */
-	public static int countCoolNumbers( int stop )
+	public static int countCoolNumbers( int num )
 	{
-		return 0;
+		int count = 0;
+		for(int x=6; x<= num; x=x+1)
+		{
+		   if (isCoolNumber(x)== true)
+		   {
+			   count= count +1;
+			  
+		   }
+		}
+
+		return count;
 	}
 }

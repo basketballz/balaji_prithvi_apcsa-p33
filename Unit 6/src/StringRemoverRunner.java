@@ -8,7 +8,18 @@ public class StringRemoverRunner
 {
 	public static void main( String args[] )
 	{
-		//add test cases	
+		StringRemover removernumber = new StringRemover("xR-MxR-MHelloxR-M", "R-M");
+		out.println(removernumber);
+		out.println(removernumber.removeStrings() + "\n");
+		
+		removernumber.setRemover("sxsssxssxsxssexssxsesss", "xs");
+		out.println(removernumber);
+		out.println(removernumber.removeStrings() + "\n");
+		
+		removernumber.setRemover("fuxqwexqwertyxqwexqwertyrtyxqwertyrtyn", "qwerty");
+		out.println(removernumber);
+		out.println(removernumber.removeStrings() + "\n");
+		
 											
 	}
 }
