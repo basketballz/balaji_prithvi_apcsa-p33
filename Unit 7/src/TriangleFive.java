@@ -38,8 +38,8 @@ public class TriangleFive
 		
 	    String s = "";
 		char y = ' ';
-		int iffer = 0;
-		int iffer1=0;
+		int cow = 0;
+		int cow1=0;
 		
 		
 		for (int i = 1; i <= amount; i++)   //ROW
@@ -49,10 +49,10 @@ public class TriangleFive
 			{
 				
 					y = (char) (letter + (char) (amount - j)); 
-					iffer = (int)y;
-					if(iffer<65 || iffer>90)
-								{iffer = 65+iffer1;
-								y = (char)iffer; }
+					cow = (int)y;
+					if(cow<65 || cow>90)
+								{cow = 65+cow1;
+								y = (char)cow; }
 				
 				
 				
@@ -62,7 +62,7 @@ public class TriangleFive
 					s = s + y;
 				}
 				if (y == 'A')
-				{iffer1 +=1; }
+				{cow1 +=1; }
 				s = s + " ";
 				
 				
@@ -71,7 +71,7 @@ public class TriangleFive
 				
 			}
 			s=s+"\n";
-			iffer1=0;
+			cow1=0;
 			
 					
 		}	
