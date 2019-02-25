@@ -15,19 +15,47 @@ public class BiggestString
 
 	public BiggestString(String a, String b, String c)
 	{
+		setStrings(a,b,c);
 	}
 
 	public void setStrings(String a, String b, String c)
 	{
+		one=a;
+		two=b;
+		three=c;
 	}
 
 	public String getBiggest()
 	{
-		return "";
+		String s = "";
+		if (one.compareTo(two)>0 && one.compareTo(three)>0)
+		{
+		
+				s=one;
+			
+		}
+		if (two.compareTo(one)>0 && two.compareTo(three)>0)
+		{
+			
+				s=two;
+			
+		}
+		if (three.compareTo(two)>0 && three.compareTo(one)>0 )
+		{
+			
+				s=three;
+			
+		}
+	
+				
+				
+				
+		
+		return s;
 	}
 
 	public String toString()
 	{
-	   return "";
+	   return "biggest = "+getBiggest() +"\n";
 	}
 }

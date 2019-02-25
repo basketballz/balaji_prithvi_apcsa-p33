@@ -9,7 +9,7 @@ public class GuessRunner
 {
 	public static void main(String args[])
 	{
-		Scanner keyboard = new Scanner(System.in);
-		char response;
+		GuessingGame g = new GuessingGame(5);
+		System.out.print(g);
 	}
 }

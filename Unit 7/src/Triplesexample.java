@@ -1,6 +1,6 @@
 //(c) A+ Computer Science
-//www.apluscompsci.com
-//Name -
+// www.apluscompsci.com
+ 
 
 import static java.lang.System.*;
 
@@ -10,26 +10,60 @@ public class Triplesexample
 
 	public Triplesexample()
 	{
-		this(0);
+		this (0);
 	}
 
 	public Triplesexample(int num)
 	{
+		setNum(num);
+
 	}
 
 	public void setNum(int num)
 	{
+		number = num;
+
 	}
 	
 	private int greatestCommonFactor(int a, int b, int c)
 	{
 		int max = 0;
-		return 1;
+		
+		for (int i = 1; i < a; i += 1)
+		{
+			if ((a % i == 0) && (b % i == 0) && (c % i == 0))
+			{
+				max = i;
+			}
+		}
+
+		return max;
 	}
 
 	public String toString()
 	{
-		String output="";
-		return output+"\n";
+		String output = "";
+		
+		for(int i = 1; i <= number; i++)
+		{
+			for (int j = i; j <= number; j++)
+			{
+				for (int k = j; k<= number; k++)
+				{
+					if ((i * i) + (j * j) == k * k)
+					{
+						if ((i % 2 == 0 && j % 2 != 0 && k % 2 != 0) || (i % 2 != 0 && j % 2 == 0 && k % 2 != 0))
+						{
+							if (greatestCommonFactor(i, j, k) <= 1)
+							{
+								output += i + " " + j + " " + k + "\n";
+							}
+						}
+					}
+				}
+			}
+		}
+
+		return output + "\n";
 	}
 }

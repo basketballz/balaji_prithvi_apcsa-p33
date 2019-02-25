@@ -8,5 +8,8 @@ public class TriangleWordRunner
 {
    public static void main(String args[])
    {	
+	   TriangleWord test = new TriangleWord();
+	   test.setWord("BEN");
+	   out.println(test);
 	}
 }

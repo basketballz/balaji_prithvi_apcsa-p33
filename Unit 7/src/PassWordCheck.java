@@ -11,10 +11,21 @@ class PasswordCheck
 
 	public PasswordCheck()
 	{
+		password = "123";
 	}
 
 	public void check()
 	{
 		Scanner keyboard = new Scanner(System.in);
+		String s;
+		do {
+			out.println("Enter a password!");
+			s = keyboard.nextLine();
+			
+			
+			
+		}while(!s.equals(password));
+		
+		
 	}
 }
