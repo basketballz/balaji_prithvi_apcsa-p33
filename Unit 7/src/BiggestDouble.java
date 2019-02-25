@@ -11,11 +11,13 @@ public class BiggestDouble
 	public BiggestDouble()
 	{
 		setDoubles(0,0,0,0);
+	
 	}
 
 	public BiggestDouble(double a, double b, double c, double d)
 	{
 		setDoubles(a,b,c,d);
+	
 	}
 
 	public void setDoubles(double a, double b, double c, double d)
@@ -30,16 +32,9 @@ public class BiggestDouble
 
 	public double getBiggest()
 	{
-		double [] cow = {one,two,three,four,};
-		double magmaman = 0.0;
-		for (int i=0;i<cow.length-1;i++)
-		{
-			if (cow[i] == one)
-			magmaman = cow[0];
-			if (cow[i+1]>magmaman)
-			magmaman = cow[i+1];
-		}
-		return magmaman;
+
+		  return Math.max(Math.max(Math.max(one, two), three), four);
+		
 	}
 
 	public String toString()

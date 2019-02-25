@@ -47,18 +47,11 @@ public class TriangleFive
 			
 			for (int j = amount; j >= i; j--) //COLUMN
 			{
-				//if (j ==amount)
-				//{y = (char) (letter + (char) (amount - j)); 
-				//iffer = (int)y;}
 				
-				y = (char) (letter + (char) (amount - j)); 
-				iffer = (int)y;
-				if(iffer>=65 && iffer<=90)
-				{}
-				
-						else
-							{
-								iffer = 65+iffer1;
+					y = (char) (letter + (char) (amount - j)); 
+					iffer = (int)y;
+					if(iffer<65 || iffer>90)
+								{iffer = 65+iffer1;
 								y = (char)iffer; }
 				
 				

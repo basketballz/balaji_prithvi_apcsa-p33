@@ -12,23 +12,31 @@ public class RockPaperScissors
 
 	public RockPaperScissors()
 	{
-		playChoice = compChoice= "";
+		setPlayers("");
 	}
 
 	public RockPaperScissors(String player)
 	{
-		int choice = (int)(Math.random()*3);
-		switch(choice) {
 		
-		case 0 : compChoice = "R"; break;
-		case 1 : compChoice = "R"; break;
-		case 2 : compChoice = "R"; break;
-		}
-		playChoice = player;
+		
+		setPlayers(player);
+		
 	}
 
 	public void setPlayers(String player)
 	{
+		
+		int choice = (int)(Math.random()*3);
+		switch(choice) {
+		
+		case 0 : compChoice = "R"; 
+							break;
+		case 1 : compChoice = "P"; 
+							break;
+		case 2 : compChoice = "S";
+							break;
+		}
+		playChoice = player.toUpperCase();
 	}
 
 	public String determineWinner()
@@ -42,12 +50,12 @@ public class RockPaperScissors
 		else if (compChoice.equals("R"))
 		{
 			if (playChoice.equals("P"))
-					{
+			{
 			winner = "! Player wins <<Paper Covers Rock>>!";
-		}
+			}
 			else if (playChoice.equals("S"))
 			{
-				winner = "! Computer wins <<Rock Breaks Paper>>!";
+				winner = "! Computer wins <<Rock Breaks Scissors>>!";
 			}
 	}
 	else if (compChoice.equals("P"))
@@ -65,19 +73,20 @@ public class RockPaperScissors
 	{
 		if (playChoice.equals("R"))
 		{
-				winner = "! Player wins <<Scissors Cuts Paper>>!";
+				winner = "! Player wins <<Rock Breaks Scissors>>!";
 		}
 		else if (playChoice.equals("P"))
 		{
-			winner = "! Computer wins <<Paper Covers Rocks>>!";
+			winner = "! Computer wins <<Scissors Cuts Paper>>!";
 		}
 	}
+		return winner;
 }
 	
 
 	public String toString()
 	{
-		String output="";
-		return output;
+		
+		return "Player had " + playChoice + "\n"+ "Computer had " + compChoice;
 	}
 }
