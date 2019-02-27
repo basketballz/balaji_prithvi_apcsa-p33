@@ -8,25 +8,30 @@ public class RayOddToEven
 	public static int go(int[] ray)
 	{
 		int distance=0;
-		int counter=0;
-		while(ray[i])
+		
+		for (int i=0;i<ray.length;i++)
 		{
-			
-		}
-				for (int j=0;j<ray.length;j++)
+			if ((ray[i]%2) != 0)
+			{ 
+				i++;
+				for (int j=i;j<ray.length;j++)
 				{
-					if (ray[j]%2==1)
+					if ((ray[i]%2)!=0)
 					{
 						distance++;
 					}
 				}
-			
+			}
 		
-		if (distance ==0)
+		}
+			   
+		
+		if (distance == 0)
 		{
 			distance= -1;
 			
 		}
 		return distance;
+		
 	}
 }
