@@ -7,6 +7,11 @@ public class RayTotal
 {
 	public static int go(int[] ray)
 	{
-		return 0;
+		int s=0;
+		for (int i=0;i<ray.length;i++)
+		{
+			s=s+ray[i];
+		}
+		return s;
 	}
 }
