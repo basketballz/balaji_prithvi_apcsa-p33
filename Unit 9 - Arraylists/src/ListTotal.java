@@ -10,6 +10,11 @@ public class ListTotal
 {
 	public static int go( List<Integer> ray )
 	{
-		return 0;
+		int sum=0;
+		for (int i =0;i <ray.size();i++)
+		{
+			sum = sum + ray.get(i);
+		}
+		return sum;
 	}
 }
