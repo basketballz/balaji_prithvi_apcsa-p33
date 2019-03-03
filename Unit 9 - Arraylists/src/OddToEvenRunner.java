@@ -18,7 +18,7 @@ public class OddToEvenRunner
 		System.out.println( s.go( Arrays.asList(2,7,11,21,5,7)));
 		System.out.println( s.go( Arrays.asList(7,255,11,255,100,3,2)));
 		System.out.println( s.go( Arrays.asList(9,11,11,11,7,1000,3)));
-		System.out.println( s.go( Arrays.asList(777,11,2,7,7,11,11,2)));
+		System.out.println( s.go( Arrays.asList(7,7,7,11,2,7,7,11,11,2)));
 		System.out.println( s.go( Arrays.asList(2,4,6,8,8)));
 		
 	}
@@ -28,4 +28,13 @@ public class OddToEvenRunner
 
 
 
-
+/*10
+8
+3
+4
+-1
+6
+5
+9
+-1
+*/
