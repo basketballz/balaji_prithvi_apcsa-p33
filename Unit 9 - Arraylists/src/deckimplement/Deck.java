@@ -1,3 +1,4 @@
+package deckimplement;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -11,7 +12,7 @@ public class Deck {
 	/**
 	 * cards contains all the cards in the deck.
 	 */
-	private Card[] cards;
+	private List<Card> cards;
 
 	/**
 	 * size is the number of not-yet-dealt cards.
@@ -40,7 +41,7 @@ public class Deck {
 				cards[i*suits.length+j] = new Card(ranks[i], suits[j], values[i]);
 			}
 		}
-		size = cards.length;
+		size = cards.size();
 		shuffle();
 	}
 
@@ -75,11 +76,11 @@ public class Deck {
 	public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
 		
-		size = cards.length;
-		for (int k = cards.length-1; k >= 1; k--) {
+		size = cards.size();
+		for (int k = cards.size()-1; k >= 1; k--) {
 			int r = (int) Math.round(Math.random() * k);
-			Card change = cards[k];
-			cards[k] = cards[r];
+			Card change = cards.get(k);
+			cards[k] = cards.get(r);
 			cards[r] = change;
 		}
 	}
@@ -93,7 +94,7 @@ public class Deck {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 		if (size > 0) {
 			size--;
-			return cards[size];
+			return cards.get(size);
 		}
 		else {
 			return null;
@@ -109,7 +110,7 @@ public class Deck {
 		String rtn = "size = " + size + "\nUndealt cards: \n";
 
 		for (int k = size - 1; k >= 0; k--) {
-			rtn = rtn + cards[k];
+			rtn = rtn + cards.get(k);
 			if (k != 0) {
 				rtn = rtn + ", ";
 			}
@@ -120,12 +121,12 @@ public class Deck {
 		}
 
 		rtn = rtn + "\nDealt cards: \n";
-		for (int k = cards.length - 1; k >= size; k--) {
-			rtn = rtn + cards[k];
+		for (int k = cards.size() - 1; k >= size; k--) {
+			rtn = rtn + cards.get(k);
 			if (k != size) {
 				rtn = rtn + ", ";
 			}
-			if ((k - cards.length) % 2 == 0) {
+			if ((k - cards.size()) % 2 == 0) {
 				// Insert carriage returns so entire deck is visible on console.
 				rtn = rtn + "\n";
 			}
