@@ -1,3 +1,5 @@
+
+
 /**
  * Card.java
  *
@@ -45,7 +47,7 @@ public class Card {
 	 */
 	public String suit() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
-		return suit;
+		return this.suit;
    }
 
 	/**
@@ -54,7 +56,7 @@ public class Card {
 	 */
 	public String rank() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
-		return rank;
+		return this.rank;
 	}
 
    /**
@@ -63,7 +65,7 @@ public class Card {
 	 */
 	public int pointValue() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
-		return pointValue;
+		return this.pointValue;
 	}
 
 	/** Compare this card with the argument.
@@ -74,11 +76,7 @@ public class Card {
 	 */
 	public boolean matches(Card otherCard) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
-		if (toString().equals(otherCard.toString()) ){
-			return true;
-		}
-		else 
-			return false;
+		return rank.equals(otherCard.rank)&&suit.equals(otherCard.suit)&&pointValue==otherCard.pointValue;
 		
 	}
 
@@ -96,7 +94,12 @@ public class Card {
 	public String toString() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
 		
-		String output = rank + " of " + suit + " (point value = " + pointValue + " ).";
-		return output;
+		StringBuilder sot = new StringBuilder("[").append(rank)
+		.append("] of [").append( suit )
+		.append("] (point value = [" ).append(pointValue)
+		.append(")]");
+		
+		return sot.toString();
+		 
 	}
 }

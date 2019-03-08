@@ -9,25 +9,34 @@ public class DeckTester {
 	 */
 	public static void main(String[] args) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		Deck DeckOne = new Deck(new String[] {"1", "3", "6"}, 
-				new String[] {"spades", "hearts", "diamonds"}, 
-				new int[] {1, 6, 7});
-		System.out.println(DeckOne);
-		DeckOne.shuffle();
-		System.out.println(DeckOne);
+		String[] rankOne = {"Jack", "Queen", "King"};
+		String[] suitOne = {"Hearts", "Spades", "Diamonds"};
+		int[] value1 = {11, 12, 13};
 		
-		Deck DeckTwo = new Deck(new String[] {"Jack", "Queen", "King"},
-				new String[] {"diamonds", "spades", "clubs"},
-				new int[] {11, 12, 14});
-		System.out.println(DeckTwo);
-		DeckTwo.deal();
-		System.out.println(DeckTwo);
-		DeckTwo.shuffle();
-		System.out.println(DeckTwo);
-		int newone = DeckOne.size();
-		for (int i = 0; i <newone ; i++) {
-			DeckOne.deal();
-		}
-		System.out.println(DeckOne);
+		Deck deckOne = new Deck(rankOne, suitOne, value1);
+		System.out.println("deckOne size should be 9: " + deckOne.size());
+		
+		String[] rankTwo = {"Ace", "2", "3"};
+		String[] suitTwo = {"Clubs", "Spades", "Hearts"};
+		int[] value2 = {1, 2, 3};
+		
+		Deck deckTwo = new Deck(rankTwo, suitTwo, value2);
+		System.out.println("deckTwo should not be empty: " + !deckTwo.isEmpty());
+		
+		String[] rankThree = {"4", "Jack", "King"};
+		String[] suitThree = {"Diamonds", "Clubs", "Spades"};
+		int[] value3 = {4, 11, 13};
+		
+		Deck deckThree = new Deck(rankThree, suitThree, value3);
+		System.out.println("deckThree dealt card is " + deckThree.deal());
+		System.out.println(deckThree);
+		
+		String[] rankFour = {"Ace", "Queen", "King"};
+		String[] suitFour = {"Clubs", "Diamonds", "Hearts", "Spades"};
+		int[] value4 = {1, 12, 13};
+		
+		Deck deckFour = new Deck(rankFour, suitFour, value4);
+		deckFour.shuffle();
+		System.out.println(deckFour);
 	}
 }
