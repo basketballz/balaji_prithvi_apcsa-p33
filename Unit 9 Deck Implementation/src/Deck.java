@@ -1,5 +1,6 @@
-package deckimplement;
+
 import java.util.List;
+import java.util.Random;
 import java.util.ArrayList;
 
 /**
@@ -62,8 +63,23 @@ public class Deck {
 	 * Randomly permute the given collection of cards
 	 * and reset the size to represent the entire deck.
 	 */
+	public int size()
+	{
+		return size;
+	}
 	public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		Random random1 = new Random();
+		int min =0;
+		for (int max = size - 1;max>0;max--)
+		{
+			int Aswap = random1.nextInt(max-min+1)+ min;
+			Card alsoholdhigh = cards.remove(max);
+			Card alsoholdlow = cards.remove(Aswap);
+			cards.add(Aswap,alsoholdhigh);
+			cards.add(max,alsoholdlow);
+			
+		}
 	}
 
 	/**
