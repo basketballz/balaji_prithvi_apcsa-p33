@@ -9,11 +9,11 @@ public class Monsterone
 	private String name;
 	private int howBig;	
 
-	public Monster()
+	public Monsterone()
 	{
 	}
 
-	public Monster(String n, int size)
+	public Monsterone(String n, int size)
 	{
 	}
 
