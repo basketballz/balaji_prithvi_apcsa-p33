@@ -15,7 +15,7 @@ public class teset2 {
 		System.out.println(Arrays.toString(getSomeGoofyNumbers(15)));
 		
 	}
-	
+	//
 	public static boolean isGoofy(int num) {
 		
 		int sum = 0;
