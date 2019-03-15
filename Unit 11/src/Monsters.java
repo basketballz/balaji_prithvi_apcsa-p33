@@ -29,7 +29,7 @@ public class Monsters
 
 	public Monster getSmallest( )
 	{
-		return null;
+		return null;//null
 	}
 
 	public String toString()
