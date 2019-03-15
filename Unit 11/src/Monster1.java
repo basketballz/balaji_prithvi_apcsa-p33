@@ -4,16 +4,16 @@
 
 import static java.lang.System.*;
 
-public class Monsterone
+public class Monster
 {
 	private String name;
 	private int howBig;	
 
-	public Monsterone()
+	public Monster()
 	{
 	}
 
-	public Monsterone(String n, int size)
+	public Monster(String n, int size)
 	{
 	}
 
