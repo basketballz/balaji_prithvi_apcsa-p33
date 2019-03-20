@@ -4,7 +4,7 @@
 
 import static java.lang.System.*; 
 
-public class Skeleton implements Monster
+/*public class Skeleton implements Monster
 {
 	//add instance variables	
 
@@ -13,4 +13,4 @@ public class Skeleton implements Monster
 	//add code to implement the Monster interface
 
 	//add a toString
-}
+}*/

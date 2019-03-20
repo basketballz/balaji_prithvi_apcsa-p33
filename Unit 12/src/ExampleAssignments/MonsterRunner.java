@@ -5,12 +5,12 @@ package ExampleAssignments;
 
 import static java.lang.System.*;
 
-public class MonsterRunner
-{
-   public static void main( String args[] )
-   {
-		Monster zero = new Monster();
-		Monster one = new Monster(8);
+//public class MonsterRunner
+//{
+   //public static void main( String args[] )
+  // {
+		//Monster zero = new Monster();
+		/*Monster one = new Monster(8);
 		Monster sue = new Monster(9, 4);
 		Monster harry = new Monster(1, 2, 3);
 		out.println("\nzero Monster :: " + zero);		
@@ -42,4 +42,4 @@ public class MonsterRunner
 		out.print("\nmTwo.compareTo(mOne) == ");
 		out.println(mTwo.compareTo(mOne));
 	}
-}
+}*/
