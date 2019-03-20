@@ -1,6 +1,5 @@
-package activity8;
+package activity9;
 import java.util.List;
-
 import java.util.ArrayList;
 
 /**
@@ -8,17 +7,17 @@ import java.util.ArrayList;
  * of solitaire games similar to Elevens.  The variants differ in
  * card removal and the board size.
  */
-public abstract class Board {
+public abstract class Board9 {
 
 	/**
 	 * The cards on this board.
 	 */
-	private Card[] cards;
+	private Card9[] cards;
 
 	/**
 	 * The deck of cards being used to play the current game.
 	 */
-	private Deck deck;
+	private Deck9 deck;
 
 	/**
 	 * Flag used to control debugging print statements.
@@ -33,9 +32,9 @@ public abstract class Board {
 	 * @param pointValues the integer values of the cards needed to create
 	 *                    the deck
 	 */
-	public Board(int size, String[] ranks, String[] suits, int[] pointValues) {
-		cards = new Card[size];
-		deck = new Deck(ranks, suits, pointValues);
+	public Board9(int size, String[] ranks, String[] suits, int[] pointValues) {
+		cards = new Card9[size];
+		deck = new Deck9(ranks, suits, pointValues);
 		if (I_AM_DEBUGGING) {
 			System.out.println(deck);
 			System.out.println("----------");
@@ -97,7 +96,7 @@ public abstract class Board {
 	 * @return the card at position k on the board.
 	 * @param k is the board position of the card to return.
 	 */
-	public Card cardAt(int k) {
+	public Card9 cardAt(int k) {
 		return cards[k];
 	}
 
@@ -148,7 +147,7 @@ public abstract class Board {
 	 */
 	public boolean gameIsWon() {
 		if (deck.isEmpty()) {
-			for (Card c : cards) {
+			for (Card9 c : cards) {
 				if (c != null) {
 					return false;
 				}

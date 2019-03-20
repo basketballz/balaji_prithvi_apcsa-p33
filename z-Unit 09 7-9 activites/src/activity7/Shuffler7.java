@@ -1,10 +1,10 @@
-package activity8;
+package activity7;
 
 /**
  * This class provides a convenient way to test shuffling methods.
  */
 import java.util.Random;
-public class Shuffler {
+public class Shuffler7 {
 
 	/**
 	 * The number of consecutive shuffle steps to be performed in each call

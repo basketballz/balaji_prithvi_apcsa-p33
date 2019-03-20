@@ -1,4 +1,4 @@
-package activity9;
+package activity7;
 
 import java.util.List;
 import java.util.Random;
@@ -9,12 +9,12 @@ import java.util.ArrayList;
  * It provides several operations including
  *      initialize, shuffle, deal, and check if empty.
  */
-public class Deck {
+public class Deck7 {
 
 	/**
 	 * cards contains all the cards in the deck.
 	 */
-	private ArrayList<Card> cards;
+	private ArrayList<Card7> cards;
 
 	/**
 	 * size is the number of not-yet-dealt cards.
@@ -32,15 +32,15 @@ public class Deck {
 	 * @param suits is an array containing all of the card suits.
 	 * @param values is an array containing all of the card point values.
 	 */
-	public Deck(String[] ranks, String[] suits, int[] values) 
+	public Deck7(String[] ranks, String[] suits, int[] values) 
 	{
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		cards = new ArrayList<Card>();
+		cards = new ArrayList<Card7>();
 		for (String suit : suits)
 		{
 			for ( int i=0;i<ranks.length;i++)
 			{
-				cards.add( new Card(ranks[i], suit, values[i]));
+				cards.add( new Card7(ranks[i], suit, values[i]));
 			}
 		}
 		size=cards.size();
@@ -75,8 +75,8 @@ public class Deck {
 		for (int max = size - 1;max>0;max--)
 		{
 			int Aswap = random1.nextInt(max-min+1)+ min;
-			Card alsoholdhigh = cards.remove(max);
-			Card alsoholdlow = cards.remove(Aswap);
+			Card7 alsoholdhigh = cards.remove(max);
+			Card7 alsoholdlow = cards.remove(Aswap);
 			cards.add(Aswap,alsoholdhigh);
 			cards.add(max,alsoholdlow);
 			
@@ -88,7 +88,7 @@ public class Deck {
 	 * @return the card just dealt, or null if all the cards have been
 	 *         previously dealt.
 	 */
-	public Card deal() {
+	public Card7 deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 		if (isEmpty())
 			return null;

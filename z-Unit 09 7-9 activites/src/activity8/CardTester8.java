@@ -3,7 +3,7 @@ package activity8;
 /**
  * This is a class that tests the Card class.
  */
-public class CardTester {
+public class CardTester8 {
 
 	/**
 	 * The main method in this class checks the Card operations for consistency.
@@ -12,15 +12,15 @@ public class CardTester {
 	public static void main(String[] args) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
 		
-		Card Spade = new Card("Ace", "Spades", 1);
+		Card8 Spade = new Card8("Ace", "Spades", 1);
 		
 		System.out.println(Spade);
 		
-		Card Diamonds = new Card("Ace", "Diamonds", 1);
+		Card8 Diamonds = new Card8("Ace", "Diamonds", 1);
 		
 		System.out.println(Diamonds);
 		
-		Card Spade1 = new Card("Ace", "Spades", 2);
+		Card8 Spade1 = new Card8("Ace", "Spades", 2);
 		
 		System.out.println(Spade1);
 	}

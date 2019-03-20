@@ -1,9 +1,9 @@
-package activity9;
+package activity8;
 
 /**
  * This is a class that tests the Deck class.
  */
-public class DeckTester {
+public class DeckTester8 {
 
 	/**
 	 * The main method in this class checks the Deck operations for consistency.
@@ -20,7 +20,7 @@ public class DeckTester {
 		int [ ] values = {1,2,3,4,5,6,7,8,9,10,0,0,0};
 		
 		
-		Deck deck = new Deck ( ranks,suits,values);
+		Deck8 deck = new Deck8 ( ranks,suits,values);
 		System.out.println("Deck has [" + deck.size() + "] cards");
 		
 		System.out.println("I just got dealt a " + deck.deal());

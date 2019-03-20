@@ -1,9 +1,9 @@
-package activity9;
+package activity7;
 //prith
 /**
  * This is a class that tests the Card class.
  */
-public class CardTester {
+public class CardTester7 {
 
 	/**
 	 * The main method in this class checks the Card operations for consistency.
@@ -12,15 +12,15 @@ public class CardTester {
 	public static void main(String[] args) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
 		
-		Card Spade = new Card("Ace", "Spades", 1);
+		Card7 Spade = new Card7("Ace", "Spades", 1);
 		
 		System.out.println(Spade);
 		
-		Card Diamonds = new Card("Ace", "Diamonds", 1);
+		Card7 Diamonds = new Card7("Ace", "Diamonds", 1);
 		
 		System.out.println(Diamonds);
 		
-		Card Spade1 = new Card("Ace", "Spades", 2);
+		Card7 Spade1 = new Card7("Ace", "Spades", 2);
 		
 		System.out.println(Spade1);
 	}

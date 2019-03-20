@@ -1,11 +1,11 @@
-package activity8;
+package activity9;
 import java.util.List;
 import java.util.ArrayList;
 
 /**
  * The ElevensBoard class represents the board in a game of Elevens.
  */
-public class ElevensBoard extends Board {
+public class ElevensBoard9 extends Board9 {
 
 	/**
 	 * The size (number of cards) on the board.
@@ -39,7 +39,7 @@ public class ElevensBoard extends Board {
 	/**
 	 * Creates a new <code>ElevensBoard</code> instance.
 	 */
-	 public ElevensBoard() {
+	 public ElevensBoard9() {
 	 	super(BOARD_SIZE, RANKS, SUITS, POINT_VALUES);
 	 }
 

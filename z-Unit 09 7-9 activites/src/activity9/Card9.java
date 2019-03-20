@@ -1,11 +1,11 @@
-package activity8;
+package activity9;
 //Prith
 /**
  * Card.java
  *
  * <code>Card</code> represents a playing card.
  */
-public class Card {
+public class Card9 {
 
 	/**
 	 * String value that holds the suit of the card
@@ -33,7 +33,7 @@ public class Card {
 	 * @param cardPointValue an <code>int</code> value
 	 *                  containing the point value of the card
 	 */
-	public Card(String cardRank, String cardSuit, int cardPointValue) {
+	public Card9(String cardRank, String cardSuit, int cardPointValue) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
 		suit = cardSuit;
 		rank = cardRank;
@@ -74,7 +74,7 @@ public class Card {
 	 *              are equal to those of the argument;
 	 *         false otherwise.
 	 */
-	public boolean matches(Card otherCard) {
+	public boolean matches(Card9 otherCard) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
 		return rank.equals(otherCard.rank)&&suit.equals(otherCard.suit)&&pointValue==otherCard.pointValue;
 		
