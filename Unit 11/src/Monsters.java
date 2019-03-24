@@ -1,39 +1,41 @@
-//(c) A+ Computer Science
-//www.apluscompsci.com
-//Name -
-
 import java.util.Arrays;
-import java.util.Scanner;
-import static java.lang.System.*;
-import static java.lang.Math.*;
-import static java.util.Arrays.*;
-import static java.util.Collections.*;
 
 public class Monsters
 {
-	private Monster[] myMonsters;
+    private Monster[] myMonsters;
 
-	public Monsters(int size)
-	{
-	}
+    public Monsters(int size) {
+        myMonsters = new Monster[size];
+    }
 
-	public void add(int spot, Monster m)
-	{
-		//put m in the Monster array at [spot]
-	}
+    public void add(int spot, Monster m) {
+        //put m in the Monster array at [spot]
+        myMonsters[spot] = m;
+    }
 
-	public String getLargest( )
-	{
-		return null;
-	}
+    public int getLargest() {
+        int heaviest = myMonsters[0].getWeight();
 
-	public Monster getSmallest( )
-	{
-		return null;//null
-	}
+        for (int i = 0; i < myMonsters.length; i++) {
+            if (myMonsters[i].getWeight() > heaviest) {
+                heaviest = myMonsters[i].getWeight();
+            }
+        }
+        return heaviest;
+    }
 
-	public String toString()
-	{
-		return "";
-	}
+    public int getSmallest() {
+        int lightest = myMonsters[0].getWeight();
+
+        for (int i = 0; i < myMonsters.length; i++) {
+            if (myMonsters[i].getWeight() < lightest) {
+                lightest = myMonsters[i].getWeight();
+            }
+        }
+        return lightest;
+    }
+
+    public String toString() {
+        return Arrays.toString(myMonsters);
+    }
 }
