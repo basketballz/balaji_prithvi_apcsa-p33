@@ -1,4 +1,4 @@
-/*package ExampleAssignments;
+package ExampleAssignments;
 //(c) A+ Computer Science
 //www.apluscompsci.com
 //Name -
@@ -59,5 +59,6 @@ public class RomanNumeralRunner
 		out.println(rOne.compareTo(rTwo));
 		out.print("\nrTwo.compareTo(rOne) == ");
 		out.println(rTwo.compareTo(rOne));			
+
 	}
-}*/
+}
