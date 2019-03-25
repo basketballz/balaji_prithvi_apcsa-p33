@@ -12,15 +12,18 @@ public class Monster implements Comparable
 	private int myAge;
 
 	//write a default Constructor
-	public Monster() {this(0,0,0);}
+	public Monster()
+{this(0,0,0);}
 
 	//write an initialization constructor with an int parameter ht
 
-	public Monster(int ht) {this(ht, 0, 0);}
+	public Monster(int ht)
+	{this(ht, 0, 0);}
 
 	//write an initialization constructor with int parameters ht and wt
 
-	public Monster(int ht, int wt) {this(ht, wt, 0);}
+	public Monster(int ht, int wt) 
+	{this(ht, wt, 0);}
 
 
 	//write an initialization constructor with int parameters ht, wt, and age
