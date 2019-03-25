@@ -7,48 +7,61 @@ import static java.lang.System.*;
 public class Skeleton implements Monster
 {
 	//add instance variables
-	String name;
-	int size;
+	private String name; 
+	private int size;  
 	
-	//add a constructor
-	public Skeleton(String s, int i)
+	//add a constructor		
+	public Skeleton(String x, int y)
 	{
-		name = s;
-		size = i;
+		name = x; 
+		size = y; 
 	}
 
 	//add code to implement the Monster interface
-	public int getHowBig() 
+	public int getHowBig()
 	{
-		return size;
-	}	
-
-	public String getName() 
-	{
-		return name;
-	}
-
-	public boolean isBigger(Monster other)
-	{
-		return size > other.getHowBig();
-	}
-
-	public boolean isSmaller(Monster other)
-	{
-		return size < other.getHowBig();
-	}
-
-	public boolean namesTheSame(Monster other)
-	{
-		return name.equals(other.getName());
+		return size; 
 	}
 	
-	//add a toString
-	public String toString() 
+	public String getName()
 	{
-		return name + " " + size;
+		return name; 
+	}
+	
+	public boolean isBigger(Monster other)
+	{
+		if (this.getHowBig()>other.getHowBig())
+		{
+			return true; 
+		}
+		return false; 
+	}
+	
+	public boolean isSmaller(Monster other)
+	{
+		if (this.getHowBig()<other.getHowBig())
+		{
+			return true; 
+		}
+		return false;
+	}
+	
+	public boolean namesTheSame(Monster other)
+	{
+		if (this.getName().equals(other.getName()))
+		{
+			return true;
+		}
+		return false;
 		
 	}
 
-	
+	//add a toString
+	public String toString()
+	{
+		String output = this.getName() + " " + this.getHowBig();
+		
+		return output; 
+		
+	}
 }
