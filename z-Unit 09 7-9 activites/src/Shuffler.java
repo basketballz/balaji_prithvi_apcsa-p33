@@ -1,16 +1,13 @@
-package activity9;
-
 /**
  * This class provides a convenient way to test shuffling methods.
  */
-import java.util.Random;
-public class Shuffler9 {
+public class Shuffler {
 
 	/**
 	 * The number of consecutive shuffle steps to be performed in each call
 	 * to each sorting procedure.
 	 */
-	private static final int SHUFFLE_COUNT =8;
+	private static final int SHUFFLE_COUNT = 3;
 
 	/**
 	 * The number of values to shuffle.
@@ -64,22 +61,22 @@ public class Shuffler9 {
 	 */
 	public static void perfectShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
-		int [] shuffled = new int [VALUE_COUNT];
-		int leftDeck=0;
-		int rightDeck=VALUE_COUNT/2;
-		for ( int i=0;i<VALUE_COUNT;)
+		int[] shuffled = new int[52];
+		int k =0;
+		for (int j =0;j<=25;j++)
 		{
-			shuffled[i++]=values[leftDeck++];
-			shuffled[i++]=values[rightDeck++];
-			
+			shuffled[k]=values[j];
+			k+=2;
 		}
-		for ( int i=0;i<VALUE_COUNT;i++)
+		k=1;
+		for (int j=26;j<=51;j++)
 		{
-			values[i]= shuffled[i];
+			shuffled[k]=values[j];
+			k+=2;
 		}
-		
-		
-		
+		for (int i = 0; i < values.length; i++) {
+			values[i] = shuffled[i];
+		}
 	}
 
 	/**
@@ -93,20 +90,19 @@ public class Shuffler9 {
 	 * searching for an as-yet-unselected card.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static void selectionShuffle(int[] values) {
+	public static void selectionShuffle(int[] cards) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
-	
-		
-		Random random1 = new Random();
-		int min =0;
-		for (int max = VALUE_COUNT - 1;max>0;max--)
-		{
-			int Aswap = random1.nextInt(max-min+1)+ min;
-			int hold = values[max];
-			values[max]=values[Aswap];
-			values[Aswap]=hold;
+		int[] shuffled = new int[52];
+		for (int k = 0; k <= 51; k++) {
+			int j = (int) (Math.random()*52);
+			while (cards[j] == -1) {
+				j = (int) (Math.random()*52);
+			}
+			shuffled[k] = cards[j];
+			cards[j] = -1;
+		}
+		for (int i = 0; i < cards.length; i++) {
+			cards[i] = shuffled[i];
 		}
 	}
-		
-		
 }

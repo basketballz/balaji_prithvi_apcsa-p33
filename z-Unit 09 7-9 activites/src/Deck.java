@@ -1,7 +1,4 @@
-package activity9;
-
 import java.util.List;
-import java.util.Random;
 import java.util.ArrayList;
 
 /**
@@ -9,12 +6,14 @@ import java.util.ArrayList;
  * It provides several operations including
  *      initialize, shuffle, deal, and check if empty.
  */
-public class Deck9 {
+public class Deck {
 
 	/**
 	 * cards contains all the cards in the deck.
 	 */
-	private ArrayList<Card9> cards;
+	//private List<Card> cards;
+	private Card[] cards;
+	
 
 	/**
 	 * size is the number of not-yet-dealt cards.
@@ -32,19 +31,23 @@ public class Deck9 {
 	 * @param suits is an array containing all of the card suits.
 	 * @param values is an array containing all of the card point values.
 	 */
-	public Deck9(String[] ranks, String[] suits, int[] values) 
-	{
+	public Deck(String[] ranks, String[] suits, int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		cards = new ArrayList<Card9>();
-		for (String suit : suits)
-		{
-			for ( int i=0;i<ranks.length;i++)
+		
+		cards =  new Card[ranks.length * suits.length];
+		int i = 0;
+		
+			for (int j = 0; j < ranks.length; j++)
 			{
-				cards.add( new Card9(ranks[i], suit, values[i]));
+				for (int k = 0; k < suits.length; k++)
+				{
+					Card aCard = new Card(ranks[j], suits[k], values[j]);
+					cards[i] = aCard;
+					i++;
+				}
 			}
-		}
-		size=cards.size();
 		shuffle();
+		size = cards.length;
 	}
 
 
@@ -54,32 +57,33 @@ public class Deck9 {
 	 */
 	public boolean isEmpty() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		
-		return size==0;
-		
+		return size == 0;
 	}
 
+	/**
+	 * Accesses the number of undealt cards in this deck.
+	 * @return the number of undealt cards in this deck.
+	 */
+	public int size() {
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		return size;
+	}
 
 	/**
 	 * Randomly permute the given collection of cards
 	 * and reset the size to represent the entire deck.
 	 */
-	public int size()
-	{
-		return size;
-	}
 	public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
-		Random random1 = new Random();
-		int min =0;
-		for (int max = size - 1;max>0;max--)
+		for (int k = cards.length-1; k>0; k--)
 		{
-			int Aswap = random1.nextInt(max-min+1)+ min;
-			Card9 alsoholdhigh = cards.remove(max);
-			Card9 alsoholdlow = cards.remove(Aswap);
-			cards.add(Aswap,alsoholdhigh);
-			cards.add(max,alsoholdlow);
-			
+			int howMany = k+1;
+			int start = 0;
+			int randPos = (int) (Math.random() * howMany) + start;
+			Card temp = cards[k];
+			cards[k] = cards[randPos];
+			cards[randPos] = temp;
+			size = cards.length;
 		}
 	}
 
@@ -88,11 +92,12 @@ public class Deck9 {
 	 * @return the card just dealt, or null if all the cards have been
 	 *         previously dealt.
 	 */
-	public Card9 deal() {
+	public Card deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		if (isEmpty())
-			return null;
-		return cards.get(--size);
+		if (isEmpty() == true) return null;
+		size--;
+		Card returned = cards[size];
+		return returned;
 	}
 
 	/**
@@ -104,7 +109,7 @@ public class Deck9 {
 		String rtn = "size = " + size + "\nUndealt cards: \n";
 
 		for (int k = size - 1; k >= 0; k--) {
-			rtn = rtn + cards.get(k);
+			rtn = rtn + cards[k];
 			if (k != 0) {
 				rtn = rtn + ", ";
 			}
@@ -115,12 +120,12 @@ public class Deck9 {
 		}
 
 		rtn = rtn + "\nDealt cards: \n";
-		for (int k = cards.size() - 1; k >= size; k--) {
-			rtn = rtn + cards.get(k);
+		for (int k = cards.length - 1; k >= size; k--) {
+			rtn = rtn + cards[k];
 			if (k != size) {
 				rtn = rtn + ", ";
 			}
-			if ((k - cards.size()) % 2 == 0) {
+			if ((k - cards.length) % 2 == 0) {
 				// Insert carriage returns so entire deck is visible on console.
 				rtn = rtn + "\n";
 			}
@@ -130,7 +135,3 @@ public class Deck9 {
 		return rtn;
 	}
 }
-
-
-
-

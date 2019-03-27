@@ -1,4 +1,4 @@
-package activity9;
+
 import java.awt.Point;
 import java.awt.Graphics;
 import java.awt.Dimension;
@@ -21,7 +21,7 @@ import java.util.ArrayList;
 /**
  * This class provides a GUI for solitaire games related to Elevens.
  */
-public class CardGameGUI9 extends JFrame implements ActionListener {
+public class CardGameGUI extends JFrame implements ActionListener {
 
 	/** Height of the game frame. */
 	private static final int DEFAULT_HEIGHT = 302;
@@ -56,7 +56,7 @@ public class CardGameGUI9 extends JFrame implements ActionListener {
 	private static final int LABEL_HEIGHT_INC = 35;
 
 	/** The board (Board subclass). */
-	private Board9 board;
+	private Board board;
 
 	/** The main panel containing the game components. */
 	private JPanel panel;
@@ -89,7 +89,7 @@ public class CardGameGUI9 extends JFrame implements ActionListener {
 	 * Initialize the GUI.
 	 * @param gameBoard is a <code>Board</code> subclass.
 	 */
-	public CardGameGUI9(Board9 gameBoard) {
+	public CardGameGUI(Board gameBoard) {
 		board = gameBoard;
 		totalWins = 0;
 		totalGames = 0;
@@ -262,7 +262,7 @@ public class CardGameGUI9 extends JFrame implements ActionListener {
 	 * @param isSelected flag that indicates if the card is selected
 	 * @return String representation of the image
 	 */
-	private String imageFileName(Card9 c, boolean isSelected) {
+	private String imageFileName(Card c, boolean isSelected) {
 		String str = "cards/";
 		if (c == null) {
 			return "cards/back1.GIF";
