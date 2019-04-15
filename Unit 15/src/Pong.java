@@ -1,6 +1,8 @@
-//(c) A+ Computer Science
-//www.apluscompsci.com
+//© A+ Computer Science  -  www.apluscompsci.com
 //Name -
+//Date -
+//Class -
+//Lab  -
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -20,17 +22,19 @@ public class Pong extends Canvas implements KeyListener, Runnable
 	private Paddle rightPaddle;
 	private boolean[] keys;
 	private BufferedImage back;
+	private int lscore;
+	private int rscore;
 
 
 	public Pong()
 	{
 		//set up all variables related to the game
-
-
-
-
+		ball = new Ball(400,300,15,15,Color.BLUE,3,1);
+		leftPaddle = new Paddle(10, 200, 10, 80, Color.YELLOW, 5);
+		rightPaddle = new Paddle(760, 200, 10, 80, Color.YELLOW, 5);
 		keys = new boolean[4];
-
+		lscore = 0;
+		rscore = 0;
     
     	setBackground(Color.WHITE);
 		setVisible(true);
@@ -57,51 +61,108 @@ public class Pong extends Canvas implements KeyListener, Runnable
 		//we will draw all changes on the background image
 		Graphics graphToBack = back.createGraphics();
 
-
+		graphToBack.setColor(Color.red);
+		
 		ball.moveAndDraw(graphToBack);
-		leftPaddle.draw(graphToBack);
-		rightPaddle.draw(graphToBack);
+		leftPaddle.draw(graphToBack, Color.orange);
+		rightPaddle.draw(graphToBack, Color.orange);
 
 
+		graphToBack.setColor(Color.BLACK);
+		graphToBack.clearRect(350, 500, 200, 200);
+		graphToBack.clearRect(250, 500, 200, 200);
+		graphToBack.drawString("Right Score " + rscore, 250, 515);
+		graphToBack.drawString("Left Score " + lscore, 350, 515);
+		
 		//see if ball hits left wall or right wall
-		if(!(ball.getX()>=10 && ball.getX()<=780))
+		
+		if (ball.didCollideLeft(ball)) {
+			graphToBack.clearRect(ball.getX(), ball.getY(), 10, 10);
+			ball.setPos(15, 100);
+			ball.setXSpeed(2);
+			rscore++;
+			ball = new Ball(400,300,15,15,Color.BLUE,3,1);
+		}
+		
+		if (ball.didCollideRight(ball)) {
+			graphToBack.clearRect(ball.getX(), ball.getY(), 10, 10);
+			ball.setPos(15, 100);
+			ball.setXSpeed(2);
+			lscore++;
+			ball = new Ball(400,300,15,15,Color.BLUE,3,1);
+		}
+		
+		/*if(!(ball.getX()>=10 && ball.getX()<=780))
 		{
 			ball.setXSpeed(0);
 			ball.setYSpeed(0);
-		}
+		}*/
 
 		
 		//see if the ball hits the top or bottom wall 
-
-
+		if(ball.didCollideBottom(ball)) {
+			ball.setYSpeed(-ball.getYSpeed());
+		}
+		if (ball.didCollideTop(ball)) {
+			ball.setYSpeed(-ball.getYSpeed());
+		}
 
 
 		//see if the ball hits the left paddle
-		
+		if ((ball.getX() <= leftPaddle.getX() + leftPaddle.getWidth() + Math.abs(ball.getXSpeed()))
+			&& (ball.getY() >= leftPaddle.getY() && ball.getY() <= leftPaddle.getY()
+			+ leftPaddle.getHeight() || ball.getY() + ball.getHeight() >= leftPaddle.getY()
+			&& ball.getY() + ball.getHeight() <= leftPaddle.getY() + leftPaddle.getHeight())) {
+			
+			if (ball.getX() <= leftPaddle.getX() + leftPaddle.getWidth() - Math.abs(ball.getXSpeed())) {
+				ball.setYSpeed(-ball.getYSpeed());
+			}
+			else {
+				ball.setXSpeed(-ball.getXSpeed());
+			}
+		}
 		
 		
 		//see if the ball hits the right paddle
 		
+		if ((ball.getX() + ball.getWidth() >= rightPaddle.getX() - Math.abs(ball.getXSpeed()))
+			&& (ball.getY()-ball.getHeight() >= rightPaddle.getY() && ball.getY()-ball.getHeight() <= rightPaddle.getY()+rightPaddle.getHeight()
+			|| ball.getY()+ball.getHeight() >= rightPaddle.getY() 
+			&& ball.getY() + ball.getHeight() <= rightPaddle.getY()+rightPaddle.getHeight())){
+			
+			if (ball.getX()+ball.getWidth() >= rightPaddle.getX() + Math.abs(ball.getXSpeed())) {
+				ball.setYSpeed(-ball.getYSpeed());
+			}
+			else {
+				ball.setXSpeed(-ball.getXSpeed());
+			}
+		}
 		
-		
-
 
 		//see if the paddles need to be moved
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		if (keys[0] == true) {
+			if (leftPaddle.getY() > 10) {
+				leftPaddle.moveUpAndDraw(graphToBack);
+			}
+		}
+		
+		if (keys[1] == true) {
+			if (leftPaddle.getY() + leftPaddle.getHeight() < 540) {
+				leftPaddle.moveDownAndDraw(graphToBack);
+			}
+		}
+		
+		if (keys[2] == true) {
+			if (rightPaddle.getY() > 10) {
+				rightPaddle.moveUpAndDraw(graphToBack);
+			}
+		}
+		
+		if (keys[3] == true) {
+			if (rightPaddle.getY() + leftPaddle.getHeight() < 540) {
+				rightPaddle.moveDownAndDraw(graphToBack);
+			}
+		}
 		
 		twoDGraph.drawImage(back, null, 0, 0);
 	}
