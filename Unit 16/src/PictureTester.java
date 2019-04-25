@@ -137,7 +137,13 @@ public class PictureTester
 	  gull.explore();
   }
   
-  /** Method to test the collage method */
+
+  
+  
+  
+  
+  
+  /** Method to test the collage method and save it to prior empty one  */
   public static void testCollage()
   {
     Picture canvas = new Picture("src\\images\\640x480.jpg");
@@ -145,21 +151,39 @@ public class PictureTester
     canvas.explore();
   }
   
+  
+  /** Method to test the new advanced beautiful collage*/
+  public static void testMyCollage() {
+	  	Picture canvas = new Picture("src\\images\\640x480.jpg");
+	    canvas.myCollage();
+	    canvas.explore();
+}
+  
+  
+  
+  /** Method to test the copy  method onto collage */
   public static void testCopy(){
 	  Picture copy =new Picture("src\\images\\640x480.jpg");
 	  Picture copied = new Picture("src\\images\\snowman.jpg");
 	  copy.explore();
-	  copy.copy(copied, 100, 130);
+	  copy.copy(copied, 72, 120);
 	  copy.explore();
   }
+  
+  
+  /** Method to test the 1/4 fraction pic method */
   public static void testCopy2(){
 	  Picture copy =new Picture("src\\images\\640x480.jpg");
 	  Picture copied = new Picture("src\\images\\snowman.jpg");
 	  copy.explore();
-	  copy.copy2(copied, 100, 200, 300, 400);
+	  copy.copy2(copied, 200, 300, 400, 500);
 	  copy.explore();
   }
-  //final version of the collage before swan
+  
+  
+  
+  
+  
 
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
@@ -192,11 +216,11 @@ public class PictureTester
    //testMirrorTemple();//finished
     //testMirrorArms();//finished
     //testMirrorGull();//finished
-    testCollage();//finished
-    testCopy();//finished
-	  testCopy2();//finished
-	  //testMyCollage();
-   testEdgeDetection();
+    //testCollage();//finished
+    //testCopy();//finished
+	  //testCopy2();//finished
+	 //testMyCollage();//finished
+  // testEdgeDetection();//finished
     
 	  
 	  //not finished down below prith
