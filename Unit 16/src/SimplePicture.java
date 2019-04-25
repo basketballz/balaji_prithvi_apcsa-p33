@@ -66,7 +66,8 @@ public class SimplePicture implements DigitalPicture
   */
  public SimplePicture(String fileName)
  {
-   
+	 
+
    // load the picture into the buffered image 
    load(fileName);
    
