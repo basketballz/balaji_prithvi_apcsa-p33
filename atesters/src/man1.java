@@ -1,6 +1,6 @@
  
- public void sharpen(int x, int y, int w, int h){
-	  Pixel[][] pixels = this.getPixels2D();//tygan
+ public void copy2(int x, int y, int w, int h){
+	  Pixel[][] pixels = this.getPixels2D();
 	  Pixel currentPixel = null;
 	  Pixel abovePixel = null;
 	  for (int col = x; col < x + w; col++)
@@ -34,34 +34,10 @@
 	    } 
  }
  
-//sharpen code , name in constructor and class, 
-//testSharpen(50,50,500,400); runner
-
-
-//method runner
-  /*public static void testSharpen(int x, int y, int w, int h){
-Picture redMoto = new Picture("redMotorcycle.jpg");
-redMoto.explore();
-redMoto.sharpen(x,y,w,h);
-redMoto.explore();
-}
-*/
-
-
-
- 
- 
- 
- 
- 
- 
-
-
-//blur
-/*public void blur(int x, int y, int w, int h){
+ public void copy2(int x, int y, int w, int h){
 	  Pixel[][] pixels = this.getPixels2D();
 	  for(int r=y; r<y+h; r++){
-		  for(int c=x; c<x+w; c++){	//for every pixel in rectangle
+		  for(int c=x; c<x+w; c++){	
 			  Pixel pixelObj = pixels[r][c];
 			  int avgRed = ((
 			  		  pixels[r-1][c-1].getRed() 
@@ -98,8 +74,33 @@ redMoto.explore();
 			  pixelObj.setBlue(avgBlue);
 		  }
 	  }
-  }
-  */
+ }
+ 
+//sharpen code , name in constructor and class, 
+//testSharpen(50,50,500,400); runner
+
+
+//method runner
+  /*public static void testSharpen(int x, int y, int w, int h){
+Picture redMoto = new Picture("redMotorcycle.jpg");
+redMoto.explore();
+redMoto.sharpen(x,y,w,h);
+redMoto.explore();
+}
+*/
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+//blur
+
 
 //name in second constuctor
 
