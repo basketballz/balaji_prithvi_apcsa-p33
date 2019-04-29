@@ -89,12 +89,43 @@ redMoto.explore();
 }
 */
 
+//CHROMAKEY
+ //code
+ public void chromakey(Picture newBack)
+ {
+ 	  Pixel[][] toPixels = this.getPixels2D();
+ 	  Pixel[][] fromPixels = newBack.getPixels2D();
+ 	  for(int row = 0; row < toPixels.length; row++)
+ 	  {
+ 		  for(int col = 0; col < toPixels[0].length; col++)
+ 		  {
+ 			  int blue = toPixels[row][col].getBlue();
+ 			  int red = toPixels[row][col].getRed();
+ 			  int green = toPixels[row][col].getGreen();
+ 			  if(Math.sqrt((double)Math.pow(red, 2) + (double)Math.pow(green, 2)) <= (double)blue)
+ 			  {
+ 				  toPixels[row][col].setColor(fromPixels[row][col].getColor());
+ 			  }
+ 		  }
+ 	  }
+ }
+ 
+ //tester
+ public static void testChromakey()
+ {
+	  Picture mark = new Picture ("src\\images\\blue-mark.jpg");
+	  Picture moon = new Picture ("src\\images\\moon-surface.jpg");
+	  mark.explore();
+	  mark.chromakey(moon);
+	  mark.explore();
+	  
+	  
+ }
 
-
  
  
- 
- 
+ //caller
+ testChromakey();
  
  
 
