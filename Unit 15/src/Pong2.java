@@ -28,7 +28,7 @@ public class Pong2 extends Canvas implements KeyListener, Runnable
 	public Pong2()
 	{
 		//set up all variables related to the game
-		ball = new Ball(350, 250, 10, 10, Color.BLACK, 3, 3);
+		ball = new Ball(350, 250, 10, 10, Color.YELLOW, 3, 3);
 		leftPaddle = new Paddle2(400, 400, 40, 40, Color.RED, 2);
 		keys = new boolean[4];
 		tiles = new ArrayList<Tile>();
@@ -37,32 +37,32 @@ public class Pong2 extends Canvas implements KeyListener, Runnable
 		//top tiles
 		for (int i = 5; i < 750; i+=85) {
 			for (int j = 5; j < 90; j+=45) {
-				tiles.add(new Tile(i, j, 80, 40, Color.BLACK));
+				tiles.add(new Tile(i, j, 80, 40, Color.GRAY));
 			}
 		}
 		
 		//bottom tiles
 		for (int i = 5; i < 750; i+=85) {
 			for (int j = 680; j < 750; j+=45) {
-				tiles.add(new Tile(i, j, 80, 40, Color.BLACK));
+				tiles.add(new Tile(i, j, 80, 40, Color.GRAY));
 			}
 		}
 		
 		//left tiles
 		for (int j = 95; j < 660; j+=45) {
 			for (int i = 5; i < 175; i+=85) {
-				tiles.add(new Tile(i, j, 80, 40, Color.BLACK));
+				tiles.add(new Tile(i, j, 80, 40, Color.GRAY));
 			}
 		}
 				
 		//right tiles
 		for (int j = 95; j < 660; j+=45) {
 			for (int i = 600; i < 750; i+=85) {
-				tiles.add(new Tile(i, j, 80, 40, Color.BLACK));
+				tiles.add(new Tile(i, j, 80, 40, Color.GRAY));
 			}
 		}
     
-    	setBackground(Color.WHITE);
+    	setBackground(Color.BLACK);
 		setVisible(true);
 		
 		new Thread(this).start();
@@ -104,36 +104,36 @@ public class Pong2 extends Canvas implements KeyListener, Runnable
 			ball.setXSpeed(0);
 			ball.setYSpeed(0);
 			level++;
-			graphToBack.setColor(Color.WHITE);
+			graphToBack.setColor(Color.BLACK);
 			graphToBack.fillRect(400, 290, 75, 75);
 			graphToBack.drawString(Integer.toString(level), 400, 360);
-			graphToBack.setColor(Color.WHITE);
+			graphToBack.setColor(Color.BLACK);
 			
 			//top tiles
 			for (int i = 5; i < 750; i += 85) {
 				for (int j = 5; j < 90; j += 45) {
-					tiles.add(new Tile(i, j, 80, 40, Color.BLACK));
+					tiles.add(new Tile(i, j, 80, 40, Color.YELLOW));
 				}
 			}
 			
 			//bottom tiles
 			for (int i = 5; i < 750; i += 85) {
 				for (int j = 680; j < 750; j += 45) {
-					tiles.add(new Tile(i, j, 80, 40, Color.BLACK));
+					tiles.add(new Tile(i, j, 80, 40, Color.GREEN));
 				}
 			}
 			
 			//left tiles
 			for (int j = 95; j < 660; j += 45) {
 				for (int i = 5; i < 175; i += 85) {
-					tiles.add(new Tile(i, j, 80, 40, Color.BLACK));
+					tiles.add(new Tile(i, j, 80, 40, Color.BLUE));
 				}
 			}
 			
 			//right tiles
 			for (int j = 95; j < 660; j += 45) {
 				for (int i = 600; i < 750; i += 85) {
-					tiles.add(new Tile(i, j, 80, 40, Color.BLACK));
+					tiles.add(new Tile(i, j, 80, 40, Color.GRAY));
 				}
 			}
 			
@@ -141,10 +141,10 @@ public class Pong2 extends Canvas implements KeyListener, Runnable
 				tile.draw(graphToBack);
 			}
 			
-			graphToBack.setColor(Color.WHITE);
+			graphToBack.setColor(Color.BLACK);
 			graphToBack.fillRect(ball.getX(), ball.getY(), 10, 10);
 			ball = null;
-			ball = new Ball(350, 250, 10, 10, Color.GREEN, 3, 3);
+			ball = new Ball(350, 250, 10, 10, Color.YELLOW, 3, 3);
 		}
 		
 		
@@ -192,7 +192,7 @@ public class Pong2 extends Canvas implements KeyListener, Runnable
 	
 		for (Tile tile : tiles) {
 			if (lCollide(tile) || rCollide(tile)) {
-				tile.draw(graphToBack, Color.WHITE);
+				tile.draw(graphToBack, Color.BLACK);
 				tiles.remove(tile);
 				ball.setXSpeed(-ball.getXSpeed());
 			}
@@ -200,7 +200,7 @@ public class Pong2 extends Canvas implements KeyListener, Runnable
 		
 		for (Tile tile : tiles) {
 			if (tCollide(tile) || bCollide(tile)) {
-				tile.draw(graphToBack, Color.WHITE);
+				tile.draw(graphToBack, Color.BLACK);
 				tiles.remove(tile);
 				ball.setYSpeed(-ball.getYSpeed());
 			}
