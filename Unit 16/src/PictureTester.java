@@ -194,6 +194,23 @@ public class PictureTester
     swan.explore();
   }
   
+  
+  public static void testEncode()
+  {
+	 Picture beach = new Picture("src/images/beach.jpg");
+	  Picture script = new Picture("src/images/msg.jpg");
+  script.explore();
+	 beach.explore();
+	  beach.encode(script);
+	 beach.explore();
+	  Picture message = beach.decode();
+	  message.explore();
+	  
+	    
+	  
+	 
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -221,7 +238,7 @@ public class PictureTester
 	// testCopy2();//finished
 	// testMyCollage();//finished
   // testEdgeDetection();//finished
-    
+    testEncode();
 	  
 	  //not finished down below prith
     //THIS IS NASTY WATER DOWN SOUTH

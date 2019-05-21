@@ -454,8 +454,77 @@ public class Picture extends SimplePicture
      }
    }
  }
+ ///////////////////////////////////////////////////////////
  
-  
+ public void encode (Picture messagePict)
+ {
+	 Pixel[][] messagePixels = messagePict.getPixels2D();
+	 Pixel[][] currPixels = this.getPixels2D();
+	 Pixel currPixel = null;
+	 Pixel messagePixel = null;
+	 int count = 0;
+	 for (int row = 0; row < this.getHeight(); row++)
+	 {
+		 for (int col = 0; col < this.getWidth(); col++)
+		 {
+			 currPixel = currPixels[row][col];
+			 int numbermultiply = currPixel.getGreen() * currPixel.getBlue()*currPixel.getGreen();
+			
+			 
+			 if ((numbermultiply % 8) % 2 != 0)
+			 {
+				 currPixel.setGreen(currPixel.getGreen() - 3);
+				 currPixel.setBlue(currPixel.getBlue() - 3);
+				 currPixel.setRed(currPixel.getRed() - 3);
+			 }
+			 
+			 
+			 messagePixel = messagePixels[row][col];
+			 if (messagePixel.colorDistance(Color.BLACK) < 50)
+			 {
+				 currPixel.setBlue(currPixel.getBlue() + ((int)(Math.random()*5)));
+				 currPixel.setGreen(currPixel.getGreen() + ((int)(Math.random()*5)));
+				 currPixel.setRed(currPixel.getRed() + ((int)(Math.random()*5)));
+				 count++;
+			 }
+		 }
+	 }
+	 System.out.println(count);
+ }
+ 
+ 	public Picture decode()
+ 	{
+ 		Pixel[][] pixels = this.getPixels2D();
+ 		int height = this.getHeight();
+ 		int width = this.getWidth();
+ 		Pixel currPixel = null;
+ 		Pixel messagePixel = null;
+		Picture messagePicture = new Picture(height, width);
+ 		Pixel[][] messagePixels = messagePicture.getPixels2D();
+ 		int count = 0; 
+ 	
+ 		for (int row = 0; row < this.getHeight(); row++)
+ 		{
+ 			for (int col = 0; col < this.getWidth(); col++)
+ 			{
+ 				currPixel = pixels[row][col];
+ 				messagePixel = messagePixels[row][col];
+ 				int numbermultiply = currPixel.getGreen() * currPixel.getBlue()*currPixel.getGreen();
+ 				if ((numbermultiply % 8) % 2 != 0)
+ 				{
+ 					messagePixel.setColor(Color.BLACK);
+ 				}
+ 				
+
+ 			}
+ 		}
+ 		
+
+ 		System.out.println(count);
+ 		return messagePicture;
+ 	}
+  //////////////////////////////////////////////////////////
+ 
   
   /* Main method for testing - each class in Java can have a main 
    * method 
