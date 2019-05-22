@@ -199,17 +199,20 @@ public class PictureTester
   {
 	 Picture beach = new Picture("src/images/beach.jpg");
 	  Picture script = new Picture("src/images/msg.jpg");
-  script.explore();
-	 beach.explore();
+	  beach.explore();
+	 script.explore();
 	  beach.encode(script);
 	 beach.explore();
-	  Picture message = beach.decode();
-	  message.explore();
-	  
-	    
-	  
+	 beach.decode().explore();
 	 
+	 
+
+	  
+	   
   }
+
+
+  
   
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -238,7 +241,7 @@ public class PictureTester
 	// testCopy2();//finished
 	// testMyCollage();//finished
   // testEdgeDetection();//finished
-    testEncode();
+	  testEncode();
 	  
 	  //not finished down below prith
     //THIS IS NASTY WATER DOWN SOUTH
